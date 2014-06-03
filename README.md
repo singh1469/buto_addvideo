@@ -16,8 +16,8 @@ This repo uses the [Buto API](http://docs.buto.tv "Online Video Platform") to pu
 
 ##MISC
 Tested with:
-*PHP >= 5.3
-*Magento (Community Edition) v1.8
-*Requires cURL library
+*   PHP >= 5.3
+*   Magento (Community Edition) v1.8
+*   Requires cURL library
 
 Please feel free to report any bugs
