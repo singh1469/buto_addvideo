@@ -9,6 +9,9 @@ Adds a widget to the TinyMCE editor used by Magento. This allows the user to sea
 ##How Do I use it?
 Simply copy the files over to your magento install maintaining the directory structure set by the repo.
 
+##How does it work?
+This repo uses the [Buto API](http://docs.buto.tv "Online Video Platform") to pull down a list of your videos/embed codes. This is cached using Magento's Vanialla cache system. For this to work, please remember to add your API keys to the Magento Configuration section under the label 'Buto'.
+
 ---
 
 ##MISC
