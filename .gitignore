@@ -1,5 +1,7 @@
 #ignore everything
 *
+!app/code/local/Buto
+!app/code/local/Buto/*
 !app/etc/modules/Buto_Widget.xml
 !README.md
 !.gitignore
