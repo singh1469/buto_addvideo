@@ -27,7 +27,6 @@ class Buto_Widget_Block_Adminhtml_Widget_Chooser extends Mage_Adminhtml_Block_Wi
                 'buto_options/buto_group/input_organisation_id',
                 Mage::app()->getStore()
             );
-            $organisation_id = null;
             $api_key = Mage::getStoreConfig('buto_options/buto_group/input_api_key', Mage::app()->getStore());
             $collection = Mage::getModel('buto_widget/video')->getAll($organisation_id, $api_key);
             $this->buto_videos = $collection;

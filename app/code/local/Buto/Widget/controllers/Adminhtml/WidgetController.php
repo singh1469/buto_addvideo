@@ -27,6 +27,6 @@ class Buto_Widget_Adminhtml_WidgetController extends Mage_Adminhtml_Controller_A
 
 
     //add comments
-    //create git repo
+    //change module name to buto_addvideo?
 
 }
