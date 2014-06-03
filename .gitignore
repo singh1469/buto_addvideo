@@ -1,0 +1,7 @@
+#ignore everything
+*
+
+#Except the following
+!.gitignore
+!/app/code/local/Buto
+!/app/etc/modules/Buto_Widget.xml
