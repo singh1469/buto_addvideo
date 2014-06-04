@@ -18,4 +18,4 @@ Tested with:
 *   Magento (Community Edition) v1.8
 *   Requires cURL library
 
-Please feel free to report any bugs
+Please report bugs in the issue tracker
