@@ -23,24 +23,34 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <input_organisation_id translate="label">
-                            <label>Organisation ID: </label>
-                            <comment>Please refer to the Buto docs [http://docs.buto.tv/Player/Overview.html] to find your organisation id</comment>
+                        <input_api_key translate="label">
+                            <label>API Key: </label>
+                            <comment>Please refer to the Buto docs [http://docs.buto.tv/Player/Overview.html] to find your API key</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>1</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </input_organisation_id>
-                        <input_api_key translate="label">
-                            <label>API Key: </label>
-                            <comment>Please refer to the Buto docs [http://docs.buto.tv/Player/Overview.html] to find your API key</comment>
+                        </input_api_key>
+                        <input_organisation_id translate="label">
+                            <label>Organisation ID: </label>
+                            <comment>Please refer to the Buto docs [http://docs.buto.tv/Player/Overview.html] to find your organisation id</comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                        </input_api_key>
+                        </input_organisation_id>
+                        <select_cache translate="label">
+                            <label>Cache Lifetime: </label>
+                            <comment>All Buto API calls are cached. Set the time period of this here.</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>buto_widget/cache</source_model>
+                        </select_cache>
                     </fields>
                 </buto_group>
             </groups>

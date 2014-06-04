@@ -10,7 +10,7 @@ class Buto_Widget_Model_Video extends Mage_Core_Model_Abstract
     const API_URL = 'https://api.buto.tv';
     const CACHE_KEY = 'buto_videos';
     const CACHE_KEY_EMBED_CODE = 'buto_embed_code';
-    const CACHE_LIFETIME = 3600; //one hour
+    const CACHE_LIFETIME_DEFAULT = 3600; //one hour
 
     /**
      * constructor
@@ -28,10 +28,11 @@ class Buto_Widget_Model_Video extends Mage_Core_Model_Abstract
      * Get all videos for this $organisation_id
      * @param $organisation_id
      * @param $api_key
+     * @param $cache_lifetime
      * @return Varien_Db_Collection
      * @throws Exception
      */
-    public function getAll($organisation_id, $api_key)
+    public function getAll($organisation_id, $api_key, $cache_lifetime)
     {
         if (empty($organisation_id)) {
             Mage::throwException('organisation id not passed in');
@@ -39,6 +40,13 @@ class Buto_Widget_Model_Video extends Mage_Core_Model_Abstract
 
         if (empty($api_key)) {
             Mage::throwException('api key not passed in');
+        }
+
+        /**
+         * If user has'nt selected default cache life value, default to one hour
+         */
+        if (empty($cache_lifetime)) {
+            $cache_lifetime = self::CACHE_LIFETIME_DEFAULT;
         }
 
         /**
@@ -76,7 +84,7 @@ class Buto_Widget_Model_Video extends Mage_Core_Model_Abstract
             /**
              * Save API json response to cache
              */
-            $cache->save($json, self::CACHE_KEY, array(), CACHE_LIFETIME);
+            $cache->save($json, self::CACHE_KEY, array(), $cache_lifetime);
 
         }
 
@@ -93,13 +101,20 @@ class Buto_Widget_Model_Video extends Mage_Core_Model_Abstract
     /**
      * Get embed code for a video via cache or curl request to buto api
      * @param $video_id
+     * @param $cache_lifetime
      * @return mixed
      * @throws Exception
      */
-    public function getEmbedCode($video_id)
+    public function getEmbedCode($video_id, $cache_lifetime)
     {
         if (empty($video_id)) {
             Mage::throwException('video id not passed in');
+        }
+        /**
+         * If user has'nt selected default cache life value, default to one hour
+         */
+        if (empty($cache_lifetime)) {
+            $cache_lifetime = self::CACHE_LIFETIME_DEFAULT;
         }
         //placeholder used to create video embed template
         //this placeholder will enable us to swap in the passed in video id
@@ -142,8 +157,22 @@ class Buto_Widget_Model_Video extends Mage_Core_Model_Abstract
              */
             //create embed template by swapping video id with known string
             $embed_template = str_replace($video_id, $placeholder, $html);
-            $cache->save($embed_template, self::CACHE_KEY_EMBED_CODE, array(), CACHE_LIFETIME);
+            $cache->save($embed_template, self::CACHE_KEY_EMBED_CODE, array(), $cache_lifetime);
         }
         return $html;
+    }
+
+
+    /**
+     * Used in system.xml to provide module configuration options in the backend
+     * @return array
+     */
+    public function toOptionArray()
+    {
+        return array(
+            array('value' => 1, 'label' => Mage::helper('widget')->__('1 hour')),
+            array('value' => 2, 'label' => Mage::helper('widget')->__('3 Hours')),
+            array('value' => 3, 'label' => Mage::helper('widget')->__('6 Hours')),
+        );
     }
 }

@@ -16,9 +16,10 @@ class Buto_Widget_Block_Chooser extends Mage_Core_Block_Abstract implements Mage
         }
 
         //get embed code
+        $cache_lifetime = Mage::getStoreConfig('buto_options/buto_group/select_cache', Mage::app()->getStore());
         $video_id = trim((string)$params['video_id']);
         try {
-            $html = Mage::getModel('widget/video')->getEmbedCode($video_id);
+            $html = Mage::getModel('buto_widget/video')->getEmbedCode($video_id, $cache_lifetime);
             return $html;
         } catch (Mage_Core_Exception $e) {
             Mage::logException($e);

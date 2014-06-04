@@ -28,7 +28,8 @@ class Buto_Widget_Block_Adminhtml_Widget_Chooser extends Mage_Adminhtml_Block_Wi
                 Mage::app()->getStore()
             );
             $api_key = Mage::getStoreConfig('buto_options/buto_group/input_api_key', Mage::app()->getStore());
-            $collection = Mage::getModel('buto_widget/video')->getAll($organisation_id, $api_key);
+            $cache_lifetime = Mage::getStoreConfig('buto_options/buto_group/select_cache', Mage::app()->getStore());
+            $collection = Mage::getModel('buto_widget/video')->getAll($organisation_id, $api_key, $cache_lifetime);
             $this->buto_videos = $collection;
         } catch (Exception $e) {
             Mage::logException($e);
