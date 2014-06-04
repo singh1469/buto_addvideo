@@ -12,6 +12,8 @@ Simply copy the files over to your magento install maintaining the directory str
 ##How does it work?
 This module uses the [Buto API](http://docs.buto.tv "Online Video Platform") to pull down a list of your videos/embed codes. This is cached using Magento's vanilla cache system. Please remember to add your API keys to the Magento Configuration section under the label 'Buto'.
 
+![Buto Configuration Options](https://dl.dropboxusercontent.com/u/31718905/web/buto-magento-module.png)
+
 ##MISC
 Tested with:
 *   PHP >= 5.3
