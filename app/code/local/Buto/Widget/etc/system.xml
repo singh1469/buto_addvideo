@@ -7,7 +7,7 @@
     </tabs>
     <sections>
         <buto_options translate="label">
-            <label>API Credentials</label>
+            <label>Settings</label>
             <tab>buto</tab>
             <frontend_type>text</frontend_type>
             <sort_order>1000</sort_order>
