@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <widgets>
     <selector type="buto_widget/chooser">
-        <name>Buto Video Selector</name>
+        <name>Buto add video</name>
         <description type="desc">Embed a Buto video</description>
         <parameters>
             <video_id type="complex" translate="label">
