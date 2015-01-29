@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<widgets>
+    <selector type="addvideo/chooser">
+        <name>Buto add video</name>
+        <description type="desc">Embed a Buto video</description>
+        <parameters>
+            <video_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Select a Video</label>
+                <type>label</type>
+                <helper_block>
+                    <type>addvideo/adminhtml_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Find Video...</open>
+                        </button>
+                    </data>
+                </helper_block>
+            </video_id>
+        </parameters>
+    </selector>
+</widgets>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Buto_Addvideo>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Cms />
+                <Mage_Widget />
+            </depends>
+        </Buto_Addvideo>
+    </modules>
+</config>

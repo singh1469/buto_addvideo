@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Buto_Addvideo>
+            <version>1.0.0.0.0</version>
+        </Buto_Addvideo>
+    </modules>
+    <global>
+        <helpers>
+            <addvideo>
+                <class>Buto_Addvideo_Helper</class>
+            </addvideo>
+        </helpers>
+        <models>
+            <addvideo>
+                <class>Buto_Addvideo_Model</class>
+            </addvideo>
+        </models>
+        <blocks>
+             <addvideo>
+                <class>Buto_Addvideo_Block</class>
+             </addvideo>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <addvideo before="Mage_Adminhtml">Buto_Addvideo_Adminhtml</addvideo>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <buto_options>
+                                            <title>Buto - All</title>
+                                        </buto_options>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
